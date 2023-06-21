@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "468808215983",
+    "project_id": "revfood-1c63c",
+    "storage_bucket": "revfood-1c63c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:468808215983:android:132f42dffd7353f0cdd35a",
+        "android_client_info": {
+          "package_name": "com.example.revfood"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "468808215983-44bevsdv736ofmh4i1noc86gssu7dlno.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDYLmtRG6FJgBcZlrghusZlEaPAfU7xu5M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "468808215983-44bevsdv736ofmh4i1noc86gssu7dlno.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "468808215983-ff6s9qa92itf3c6e5tarkfmb9mpqcg3r.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.revfood"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

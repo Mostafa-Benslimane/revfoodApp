@@ -1,0 +1,167 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:revfood/Location.dart';
+
+class Home extends StatefulWidget {
+  const Home({super.key});
+  @override
+  State<StatefulWidget> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  final restaurantNameController = TextEditingController();
+  final imgPathController = TextEditingController();
+  final categoryController = TextEditingController();
+  String? dropdownValue;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Container(
+              //FirstName TextField
+              height: 85,
+              margin: const EdgeInsets.fromLTRB(20, 35, 25, 0),
+              child: TextFormField(
+                autofocus: false,
+                decoration: InputDecoration(
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    labelText: 'Restaurant Name',
+                    labelStyle: const TextStyle(fontSize: 18),
+                    hintText: 'enter your Restaurant name',
+                    hintStyle: const TextStyle(fontSize: 17),
+                    prefixIcon: const Icon(
+                      Icons.person,
+                      color: Color(0xffb22222),
+                    )),
+                keyboardType: TextInputType.text,
+                controller: restaurantNameController,
+                textInputAction: TextInputAction.next,
+              ),
+            ),
+            Container(
+              //FamilyName TextField
+              height: 85,
+              margin: const EdgeInsets.fromLTRB(20, 5, 25, 0),
+              child: TextFormField(
+                autofocus: false,
+                decoration: InputDecoration(
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                    labelText: 'imgPath',
+                    labelStyle: const TextStyle(fontSize: 18),
+                    hintText: 'enter your imgPath',
+                    hintStyle: const TextStyle(fontSize: 17),
+                    prefixIcon: const Icon(
+                      Icons.person,
+                      color: Color(0xffb22222),
+                    )),
+                keyboardType: TextInputType.text,
+                controller: imgPathController,
+                textInputAction: TextInputAction.next,
+              ),
+            ),
+            Container(
+              //E-mail TextField
+              height: 85,
+              margin: const EdgeInsets.fromLTRB(20, 5, 25, 0),
+              child: TextFormField(
+                autofocus: false,
+                decoration: InputDecoration(
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                    labelText: 'category',
+                    labelStyle: const TextStyle(fontSize: 18),
+                    hintText: 'enter your category',
+                    hintStyle: const TextStyle(fontSize: 17),
+                    prefixIcon: const Icon(
+                      Icons.email_outlined,
+                      color: Color(0xffb22222),
+                    )),
+                keyboardType: TextInputType.emailAddress,
+                controller: categoryController,
+                textInputAction: TextInputAction.next,
+              ),
+            ),
+            // Choosing Location
+            const Align(
+              alignment: Alignment.centerLeft, // Aligns the text to the left
+              child: Padding(
+                padding: EdgeInsets.only(left: 40, top: 20),
+                child: Text(
+                  'Choose A Location :',
+                  style: TextStyle(fontSize: 16),
+                ),
+              ),
+            ),
+            Container(
+              height: 60,
+              margin: const EdgeInsets.symmetric(horizontal: 40),
+              child: DropdownButton<String>(
+                isExpanded: true,
+                value: dropdownValue,
+                elevation: 16,
+                underline: Container(
+                  height: 2,
+                  color: const Color.fromARGB(255, 0, 0, 0),
+                ),
+                hint: const Text(
+                  'Select Location Here',
+                  style: TextStyle(color: Colors.grey),
+                ),
+                onChanged: (String? value) {
+                  setState(() {
+                    dropdownValue = value;
+                  });
+                },
+                items: [
+                  ...wilaya.map(
+                    (value) => DropdownMenuItem<String>(
+                      value: value,
+                      child: Text(value),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            ElevatedButton(
+                onPressed: () {
+                  addRes();
+                },
+                child: Container(
+                  child: const Text('Add'),
+                ))
+          ],
+        ),
+      ),
+    );
+  }
+
+  void addRes() async {
+    CollectionReference firebaseFirestore =
+        FirebaseFirestore.instance.collection("restaurant");
+
+    await firebaseFirestore.add({
+      'img': imgPathController.text,
+      'Name': restaurantNameController.text,
+      'Category': categoryController.text,
+    });
+    Fluttertoast.showToast(msg: "Account created successfully :) ");
+  }
+}

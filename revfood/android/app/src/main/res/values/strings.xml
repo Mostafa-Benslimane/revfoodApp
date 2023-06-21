@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="app_name">RevFood</string>
+<string name="facebook_app_id">778254293852997</string>
+<string name="fb_login_protocol_scheme">fbaa9a8840af32602bbddd512fa682674a</string>
+<string name="facebook_client_token">9b33d31f603bab530c879a937d88e7e2</string>
+</resources>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>42433252927-ae523u2iusvhihjpfoan06108j3q1ncm.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.42433252927-ae523u2iusvhihjpfoan06108j3q1ncm</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>42433252927-ph5ivfl6ughnutl6rlcebrp1b2tsgaoc.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCUSiBgxF7n64Gep1eA79HfuQG7dNeuHbM</string>
+	<key>GCM_SENDER_ID</key>
+	<string>42433252927</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.revfood</string>
+	<key>PROJECT_ID</key>
+	<string>revfood-b0578</string>
+	<key>STORAGE_BUCKET</key>
+	<string>revfood-b0578.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:42433252927:ios:6b7bc635373c43697bf28a</string>
+</dict>
+</plist>
